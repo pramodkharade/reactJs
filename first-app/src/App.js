@@ -34,10 +34,19 @@ class App extends Component {
      });
   }
   render() {
+    const inlinestyle = {
+      backgroundColor:'white',
+      font:'inherit',
+      border:'1px solid blue',
+      padding:'8px;',
+      cursor:'pointer'
+    }
     return (
       <div className="App">
         <h2>Hi, I am react App!</h2>
-        <button onClick={ ()=>this.switchNameHandler("Pramod Kharade!!")}>Switch Name</button>
+        <button 
+        style={inlinestyle}
+        onClick={ ()=>this.switchNameHandler("Pramod Kharade!!")}>Switch Name</button>
         <Person 
             name={ this.state.Persons[0].name} 
             age={ this.state.Persons[0].age}>
