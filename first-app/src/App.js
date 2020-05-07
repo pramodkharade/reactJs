@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import './App.css';
 import Person from './Person/Person';
-import person from './Person/Person';
+
 
 class App extends Component {
   state = {
@@ -29,26 +29,15 @@ class App extends Component {
       showPersons: !doesShow
     });
   };
-  switchNameHandler = (newName) => {
-    //console.log("was click Event");
-    // Don't Do this: this.state.Persons[0].name = "Pramod Kharade";
+  deletePersonHandler = (personIndex) => {
+    //const persons = this.state.persons.splice(); mutate // approach 1
+    const persons = [...this.state.persons]; // approach 2
+    persons.splice(personIndex, 1);
     this.setState({
-      persons: [
-        {
-          name: newName,
-          age: 30
-        },
-        {
-          name: 'Shital Nalawade',
-          age: 29
-        },
-        {
-          name: 'Kishor',
-          age: 30
-        }
-      ]
+      persons: persons
     });
-  }
+    console.log('Delete handler Calling');
+  };
   nameChangedHandler = (event) => {
     //console.log("was click Event");
     // Don't Do this: this.state.Persons[0].name = "Pramod Kharade";
@@ -82,8 +71,8 @@ class App extends Component {
     if (this.state.showPersons) {
       person = (
         <div>
-          {this.state.persons.map((person) => {
-          return <Person name={person.name} age={person.age}/>
+          {this.state.persons.map((person, index) => {
+          return <Person name={person.name} age={person.age} click={() => this.deletePersonHandler(index)}/>
         })}
         
           </div>
