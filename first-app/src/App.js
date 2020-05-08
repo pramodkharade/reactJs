@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Radium from 'radium';
+import Radium, { StyleRoot } from 'radium';
 import './App.css';
 import Person from './Person/Person';
 
@@ -69,8 +69,7 @@ class App extends Component {
       padding: '8px',
       ":hover": {
         backgroundColor: 'lightgreen',
-        color: 'black',
-        fontWeight: 'bold'
+        color: 'black'
       }
     };
     if (this.state.showPersons) {
@@ -102,7 +101,8 @@ class App extends Component {
       clasess.push('bold');
     }
     return (
-      <div className="App">
+      <StyleRoot>
+<div className="App">
         <h2>Hi, I am react App!</h2>
         <p className={clasess.join(' ')}>This is really working</p>
         <button
@@ -110,6 +110,7 @@ class App extends Component {
       onClick={ this.togglePersonHandler}>Switch Name</button>
         {person}
       </div>
+      </StyleRoot>
       );
   }
 }
