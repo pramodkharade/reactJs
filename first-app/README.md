@@ -71,3 +71,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 # radium package for handling the css and classes
 
 npm install --save radium
+
+# styled component Library
+
+npm install --save styled-components
