@@ -88,9 +88,17 @@ class App extends Component {
       inlinestyle.backgroundColor = 'red';
 
     }
+    let clasess = [];
+    if (this.state.persons.length <= 2) {
+      clasess.push('red');
+    }
+    if (this.state.persons.length <= 1) {
+      clasess.push('bold');
+    }
     return (
       <div className="App">
         <h2>Hi, I am react App!</h2>
+        <p className={clasess.join(' ')}>This is really working</p>
         <button
       style={inlinestyle}
       onClick={ this.togglePersonHandler}>Switch Name</button>
