@@ -1,0 +1,47 @@
+.red {
+    color:red;
+  }
+  .bold {
+    font-weight: bold;
+  }
+  .Cockpit button {
+      border: 1px solid white;
+      padding: 16px;
+      background-color: green;
+      font:inherit;
+      color: white;
+      cursor: pointer;
+  }
+  .Cockpit button:hover{
+      background-color: lightgreen;
+      color: black;
+  }
+  .greenButton{
+    background-color: green;
+    color : white;
+    font: inherit;
+    border: 1px solid white;
+    padding: 8px;
+  }
+  .greenButton:hover{
+    background-color: lightgreen;
+    color : black;
+    font: inherit;
+    border: 1px solid white;
+    padding: 8px;
+  }
+  .redButton{
+    background-color: red;
+    color: white;
+    font: inherit;
+    border: 1px solid white;
+    padding: 8px;
+  }
+  .redButton:hover{
+    background-color: lightcoral;
+    color: black;
+    font: inherit;
+    border: 1px solid white;
+    padding: 8px;
+  }
+  

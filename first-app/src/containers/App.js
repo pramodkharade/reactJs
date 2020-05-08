@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
 import './App.css';
-import Person from './Person/Person';
-import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
+import Persons from '../components/Persons/Persons';
+import Cockpit from '../components/Cockpit/Cockpit';
 
 class App extends Component {
   state = {
@@ -61,47 +61,21 @@ class App extends Component {
 
   render() {
     let person = null;
-    const inlinestyle = {
-      backgroundColor: 'green',
-      color: 'white',
-      font: 'inherit',
-      border: '1px solid white',
-      padding: '8px'
-    };
     if (this.state.showPersons) {
-      person = (
-        <div>
-          {this.state.persons.map((person, index) => {
-          return <ErrorBoundary key={person.id}><Person
-            name={person.name}
-            changed={(event) => {
-              this.nameChangedHandler(event, person.id)
-            }}
-            age={person.age}
-
-            click={() => this.deletePersonHandler(index)}
-            /></ErrorBoundary>
-        })}
-          </div>
-      );
-      inlinestyle.backgroundColor = 'red';
+      person = <Persons
+      persons={this.state.persons}
+      clicked={this.deletePersonHandler}
+      changed={this.nameChangedHandler}/>;
 
     }
-    let clasess = [];
-    if (this.state.persons.length <= 2) {
-      clasess.push('red');
-    }
-    if (this.state.persons.length <= 1) {
-      clasess.push('bold');
-    }
+
     return (
 
       <div className="App">
-        <h2>Hi, I am react App!</h2>
-        <p className={clasess.join(' ')}>This is really working</p>
-        <button
-      style={inlinestyle}
-      onClick={ this.togglePersonHandler}>Switch Name</button>
+        <Cockpit
+      showPersons ={this.state.showPersons}
+      persons ={this.state.persons}
+      clicked={this.togglePersonHandler}/>
         {person}
       </div>
 
