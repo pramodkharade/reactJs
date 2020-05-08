@@ -62,9 +62,10 @@ class App extends Component {
   render() {
     let person = null;
     const inlinestyle = {
-      backgroundColor: 'white',
+      backgroundColor: 'green',
+      color: 'white',
       font: 'inherit',
-      border: '1px solid blue',
+      border: '1px solid white',
       padding: '8px',
       cursor: 'pointer'
     };
@@ -82,9 +83,10 @@ class App extends Component {
             click={() => this.deletePersonHandler(index)}
             />
         })}
-        
           </div>
       );
+      inlinestyle.backgroundColor = 'red';
+
     }
     return (
       <div className="App">
