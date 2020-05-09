@@ -5,6 +5,9 @@ import Persons from '../components/Persons/Persons';
 import Cockpit from '../components/Cockpit/Cockpit';
 
 class App extends Component {
+  constructor() {
+    super();
+  }
   state = {
     persons: [
       {
@@ -24,6 +27,10 @@ class App extends Component {
       }
     ],
     showPersons: false
+  }
+  componentDidMount() {}
+  static getDerivedStateFormProps(props, state) {
+    return state;
   }
   togglePersonHandler = () => {
     console.log('Calling toggle person');
