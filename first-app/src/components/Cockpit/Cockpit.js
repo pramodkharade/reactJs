@@ -1,9 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 import Classes from './Cockpit.css';
+const toggleRef = useRef(null);
 const Cockpit = (props) => {
   useEffect(() => {
     console.log('[Cockpit.js] useEffect');
+    toggleRef.current.click();
   }, [props.persons]);
   let assignedclasess = [];
 
@@ -27,7 +29,7 @@ const Cockpit = (props) => {
         <p className={assignedclasess.join(' ')}>This is really working</p>
         <button
     className={btnClass}
-    onClick={ props.clicked}>Switch Name</button>
+    onClick={ props.clicked} ref={toggleRef}>Switch Name</button>
         </div>
     );
 };
