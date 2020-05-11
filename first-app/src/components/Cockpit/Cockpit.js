@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+
 import Classes from './Cockpit.css';
-const cockpit = (props) => {
+const Cockpit = (props) => {
+  useEffect(() => {
+    console.log('[Cockpit.js] useEffect');
+  }, [props.persons]);
   let assignedclasess = [];
 
   let btnClass = '';
@@ -11,10 +15,10 @@ const cockpit = (props) => {
   } else {
     btnClass = 'greenButton';
   }
-  if (props.persons.length <= 2) {
+  if (props.personslenght <= 2) {
     assignedclasess.push('red');
   }
-  if (props.persons.length <= 1) {
+  if (props.personslenght <= 1) {
     assignedclasess.push('bold');
   }
   return (
@@ -28,4 +32,4 @@ const cockpit = (props) => {
     );
 };
 
-export default cockpit;
+export default React.memo(Cockpit);

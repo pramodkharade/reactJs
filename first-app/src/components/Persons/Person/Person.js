@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, PureComponent } from 'react';
 
 import './Person.css';
-class Person extends Component {
+class Person extends PureComponent {
   render() {
     return (
       <div className="Person" >
