@@ -1,5 +1,5 @@
 import React, { Component, PureComponent } from 'react';
-
+import PropTypes from 'prop-types';
 import './Person.css';
 import Auxiliary from '../../../hoc/Auxiliary';
 class Person extends PureComponent {
@@ -15,6 +15,12 @@ class Person extends PureComponent {
       );
   }
 }
-
+// eslint-disable-next-line react/no-typos
+Person.PropTypes = {
+  click: PropTypes.func,
+  name: PropTypes.string,
+  age: PropTypes.number,
+  changed: PropTypes.func
+};
 
 export default Person;

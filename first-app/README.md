@@ -75,3 +75,7 @@ npm install --save radium
 # styled component Library
 
 npm install --save styled-components
+
+# prop types library
+
+npm i --save prop-types
